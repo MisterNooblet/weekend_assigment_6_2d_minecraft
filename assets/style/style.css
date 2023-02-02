@@ -1,6 +1,13 @@
 @import url('/assets/style/reset.css');
+@import url('/assets/style/animations.css');
 
 body {
+  height: 100vh;
+  width: 100wv;
+  padding-top: 5vh;
+  background-color: black;
+}
+section {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -8,7 +15,6 @@ body {
   height: 90vh;
   background: url('/assets/images/bgimg.jpg') center center/cover no-repeat;
 }
-
 .logo {
   width: 50vw;
 }
@@ -25,7 +31,7 @@ body {
     0px -2px 0 black;
 }
 .buttons i {
-  font-size: 5rem;
+  font-size: 5vmin;
   text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
     -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
     0px -2px 0 black;
@@ -39,8 +45,8 @@ body {
     0px -2px 0 rgba(233, 217, 0, 0.5);
 }
 .buttons h1 {
-  margin: 0 3rem;
-  font-size: 5rem;
+  margin: 0 3vmin;
+  font-size: 7vmin;
   text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
     -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
     0px -2px 0 black;
@@ -50,7 +56,7 @@ body {
   display: flex;
   align-items: center;
 
-  padding: 0 4rem;
+  padding: 0 4vmin;
 }
 #startBtn {
   display: flex;
@@ -58,7 +64,7 @@ body {
   align-items: center;
   cursor: pointer;
   height: fit-content;
-  font-size: 2.5rem;
+  font-size: 2.5vmin;
   font-weight: bold;
   padding: 0.5rem;
   border-radius: 1rem;
@@ -80,4 +86,19 @@ body {
     -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
     0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
     0px -2px 0 rgba(233, 217, 0, 0.5);
+}
+.jello {
+  animation: jello 1s ease 0s 1 normal forwards;
+}
+.selectionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selectionBox > h1 {
+  color: white;
+  font-size: 2vmin;
+  text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
 }

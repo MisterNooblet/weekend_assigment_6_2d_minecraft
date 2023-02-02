@@ -39,29 +39,47 @@ function modSize(params) {
             if (width > 10) {
                 width--
             }
+            updateNums('left');
             break;
         case 'incWidth':
             if (width < 40) {
                 width++
             }
+            updateNums('left');
             break;
         case 'decHeight':
             if (height > 10) {
                 height--
             }
+            updateNums('right');
             break;
         case 'incHeight':
             if (height < 40) {
                 height++
             }
+            updateNums('right');
             break;
         default:
             break;
     }
-    updateNums();
 
 }
-function updateNums() {
-    widthEl.innerHTML = width
-    heightEl.innerHTML = height
+function updateNums(side) {
+    switch (side) {
+        case 'left':
+            widthEl.innerHTML = width
+            widthEl.classList.toggle('jello')
+            break;
+        case 'right':
+            heightEl.innerHTML = height
+            heightEl.classList.toggle('jello')
+            break;
+        default:
+            break;
+    }
+    setTimeout(() => {
+        widthEl.classList.remove('jello')
+        heightEl.classList.remove('jello')
+    }, 500)
+
 }
