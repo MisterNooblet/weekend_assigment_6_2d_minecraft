@@ -1,21 +1,17 @@
 let result = []
 
-function fillArray(width, height) {
+export function fillArray(width, height) {
+    let tempres = []
     for (let i = 0; i < height; i++) {
         let zeroArr = new Array(width).fill(0)
-        result.push(zeroArr)
+        tempres.push(zeroArr)
 
     }
-    return result
+    result = tempres
 }
 
-fillArray(15, 10)
-
-
-
-
-
-function generateArray(width, height) {
+export function generateArray(width, height) {
+    fillArray(width, height)
     let maxTrees = Math.floor(width * 0.3) - 2
     let currentLayer = 4
     for (let row = 0; row < height; row++) {
@@ -80,10 +76,5 @@ function generateArray(width, height) {
 
         }
     }
-    return result;
+    localStorage.setItem('map', JSON.stringify(result))
 }
-
-
-
-
-console.log(generateArray(15, 10))

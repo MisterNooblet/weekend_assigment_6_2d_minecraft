@@ -1,4 +1,5 @@
 //////////////Load manager
+import { generateArray } from "./tileGenerator.js";
 
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
@@ -26,6 +27,7 @@ let decWidth = document.querySelector('#decWidth')
 let incWidth = document.querySelector('#incWidth')
 let decHeight = document.querySelector('#decHeight')
 let incHeight = document.querySelector('#incHeight')
+const startBtn = document.querySelector('#startBtn');
 //Event Listeners
 arrows.forEach(element => {
     element.addEventListener('click', function (e) {
@@ -44,6 +46,10 @@ decHeight.addEventListener('click', () => {
 })
 incHeight.addEventListener('click', () => {
     modSize('incHeight')
+})
+
+startBtn.addEventListener('click', () => {
+    generateArray(width, height)
 })
 
 
