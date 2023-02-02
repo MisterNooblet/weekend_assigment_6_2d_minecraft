@@ -5,8 +5,8 @@ body {
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background: url('/assets/images/bgimg.jpg') center center/cover;
+  height: 90vh;
+  background: url('/assets/images/bgimg.jpg') center center/cover no-repeat;
 }
 
 .logo {
@@ -16,16 +16,68 @@ body {
 .buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
 }
-.buttons img {
-  height: 5vh;
+.buttons i {
+  font-size: 5rem;
+  text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
+}
+.buttons i:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
 }
 .buttons h1 {
   margin: 0 3rem;
+  font-size: 5rem;
+  text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
+    0px -2px 0 black;
 }
 #widthcontainer,
 #heightcontainer {
   display: flex;
   align-items: center;
-  padding: 10rem;
+
+  padding: 0 4rem;
+}
+#startBtn {
+  display: flex;
+  color: black;
+  align-items: center;
+  cursor: pointer;
+  height: fit-content;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5),
+    2px -2px 0 rgba(255, 255, 255, 0.5), -2px 2px 0 rgba(255, 255, 255, 0.5),
+    -2px -2px 0 rgba(255, 255, 255, 0.5), 2px 0px 0 rgba(255, 255, 255, 0.5),
+    0px 2px 0 rgba(255, 255, 255, 0.5), -2px 0px 0 rgba(255, 255, 255, 0.5),
+    0px -2px 0 rgba(255, 255, 255, 0.5); */
+}
+#startBtn:hover {
+  box-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
+  text-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
 }
