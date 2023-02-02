@@ -1,3 +1,17 @@
+//////////////Load manager
+
+document.onreadystatechange = function () {
+    if (document.readyState !== "complete") {
+        document.querySelector("body").style.display = "none";
+        document.querySelector("#loader").style.visibility = "visible";
+    } else {
+        document.querySelector("#loader").style.display = "none";
+        document.querySelector("body").style.display = "";
+    }
+};
+
+
+
 //Variables
 let height = 24;
 let width = 24;
@@ -86,14 +100,3 @@ function updateNums(side) {
 
 
 
-//////////////Load manager
-
-document.onreadystatechange = function () {
-    if (document.readyState !== "complete") {
-        document.querySelector("body").style.display = "none";
-        document.querySelector("#loader").style.visibility = "visible";
-    } else {
-        document.querySelector("#loader").style.display = "none";
-        document.querySelector("body").style.display = "";
-    }
-};
