@@ -3,7 +3,8 @@
 body {
   height: 100vh;
   width: 100wv;
-  padding-top: 5vh;
+
+  padding-bottom: 10vh;
   background-color: black;
 }
 
@@ -17,8 +18,46 @@ body {
 }
 #gamegrid {
   display: grid;
+  width: fit-content;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  width: 100%;
+  height: 90vmin;
+}
+.tile:hover {
+  border: 1px solid white;
+}
+
+.leaves {
+  background: url('/assets/images/blocks/leaves.webp') center center/cover
+    no-repeat;
+}
+.ruby {
+  background: url('/assets/images/blocks/ruby.webp') center center/cover
+    no-repeat;
+}
+.coal {
+  background: url('/assets/images/blocks/coal.webp') center center/cover
+    no-repeat;
+}
+.diamond {
+  background: url('/assets/images/blocks/diamond.webp') center center/cover
+    no-repeat;
+}
+.stone {
+  background: url('/assets/images/blocks/stone.webp') center center/cover
+    no-repeat;
+}
+.grass {
+  background: url('/assets/images/blocks/grass.webp') center center/cover
+    no-repeat;
+}
+.tree {
+  background: url('/assets/images/blocks/tree.webp') center center/cover
+    no-repeat;
+}
+.sky {
+  background-color: skyblue;
 }
