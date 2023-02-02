@@ -50,6 +50,7 @@ incHeight.addEventListener('click', () => {
 
 startBtn.addEventListener('click', () => {
     generateArray(width, height)
+    location.href = '/game.html'
 })
 
 
