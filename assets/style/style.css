@@ -54,7 +54,7 @@ body {
   background: url('/assets/images/bgimg.jpg') center center/cover no-repeat;
 }
 .logo {
-  width: 50vw;
+  width: 40vw;
 }
 
 .buttons {
@@ -150,4 +150,7 @@ body {
 }
 .skybluetxt {
   color: skyblue;
+}
+#selbox1 {
+  margin-bottom: 5vh;
 }
