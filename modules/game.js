@@ -103,9 +103,6 @@ export function clickTile(e) {
     let tileId = e.target.id.split('x')
     tileId[1]--
     let nextTileAbove = document.querySelector(`#${tileId.join('x')}`)
-    console.log(nextTileAbove);
-    console.log(tileId);
-    console.log(e.target.get);
     if (classList.contains('leaves') && tool === 'hatchet' && nextTileAbove.classList.contains('sky')) {
         classList.remove('leaves')
         classList.add('sky')
@@ -141,7 +138,7 @@ export function clickTile(e) {
         classList.add('sky')
         stoneAmt.classList.add('pulse')
         inventory.stone += 1
-    } else if (classList.contains('sky')) {
+    } else if (classList.contains('sky') && nextTileAbove != null) {
         layTile(e)
     }
     updateUI()
