@@ -89,74 +89,77 @@ function setTool(tool) {
 //functions
 export function clickTile(e) {
     let tool = inventory.currentTool;
-    if (e.target.classList.contains('leaves') && tool === 'hatchet') {
-        e.target.classList.remove('leaves')
-        e.target.classList.add('sky')
+    let classList = e.target.classList
+    if (classList.contains('leaves') && tool === 'hatchet') {
+        classList.remove('leaves')
+        classList.add('sky')
         inventory.leaves += 1
-    } else if (e.target.classList.contains('ruby') && tool === 'pickaxe') {
-        e.target.classList.remove('ruby')
-        e.target.classList.add('sky')
+    } else if (classList.contains('ruby') && tool === 'pickaxe') {
+        classList.remove('ruby')
+        classList.add('sky')
         inventory.ruby += 1
-    } else if (e.target.classList.contains('diamond') && tool === 'pickaxe') {
-        e.target.classList.remove('diamond')
-        e.target.classList.add('sky')
+    } else if (classList.contains('diamond') && tool === 'pickaxe') {
+        classList.remove('diamond')
+        classList.add('sky')
         inventory.diamond += 1
-    } else if (e.target.classList.contains('coal') && tool === 'pickaxe') {
-        e.target.classList.remove('coal')
-        e.target.classList.add('sky')
+    } else if (classList.contains('coal') && tool === 'pickaxe') {
+        classList.remove('coal')
+        classList.add('sky')
         inventory.coal += 1
-    } else if (e.target.classList.contains('tree') && tool === 'hatchet') {
-        e.target.classList.remove('tree')
-        e.target.classList.add('sky')
+    } else if (classList.contains('tree') && tool === 'hatchet') {
+        classList.remove('tree')
+        classList.add('sky')
         inventory.tree += 1
-    } else if (e.target.classList.contains('grass') && tool === 'shovel') {
-        e.target.classList.remove('grass')
-        e.target.classList.add('sky')
+    } else if (classList.contains('grass') && tool === 'shovel') {
+        classList.remove('grass')
+        classList.add('sky')
         inventory.grass += 1
-    } else if (e.target.classList.contains('stone') && tool === 'pickaxe') {
-        e.target.classList.remove('stone')
-        e.target.classList.add('sky')
+    } else if (classList.contains('stone') && tool === 'pickaxe') {
+        classList.remove('stone')
+        classList.add('sky')
         inventory.stone += 1
-    } else if (e.target.classList.contains('sky')) {
+    } else if (classList.contains('sky')) {
         layTile(e)
     }
     updateUI()
 }
 
 function layTile(e) {
-    if (inventory.currentTool === 'leaves' && inventory.leaves > 0) {
-        e.target.classList.add('leaves')
-        e.target.classList.remove('sky')
+    let classList = e.target.classList
+    let currentTool = inventory.currentTool
+    if (currentTool === 'leaves' && inventory.leaves > 0) {
+        classList.add('leaves')
+        classList.remove('sky')
         inventory.leaves--
 
-    } else if (inventory.currentTool === 'ruby' && inventory.ruby > 0) {
-        e.target.classList.add('ruby')
-        e.target.classList.remove('sky')
+    } else if (currentTool === 'ruby' && inventory.ruby > 0) {
+        classList.add('ruby')
+        classList.remove('sky')
         inventory.ruby--
 
-    } else if (inventory.currentTool === 'diamond' && inventory.diamond > 0) {
-        e.target.classList.add('diamond')
-        e.target.classList.remove('sky')
+    } else if (currentTool === 'diamond' && inventory.diamond > 0) {
+        classList.add('diamond')
+        classList.remove('sky')
         inventory.diamond--
 
-    } else if (inventory.currentTool === 'coal' && inventory.coal > 0) {
-        e.target.classList.add('coal')
-        e.target.classList.remove('sky')
+    } else if (currentTool === 'coal' && inventory.coal > 0) {
+        classList.add('coal')
+        classList.remove('sky')
         inventory.coal--
 
-    } else if (inventory.currentTool === 'grass' && inventory.grass > 0) {
-        e.target.classList.add('grass')
-        e.target.classList.remove('sky')
+    } else if (currentTool === 'grass' && inventory.grass > 0) {
+        classList.add('grass')
+        classList.remove('sky')
         inventory.grass--
 
-    } else if (inventory.currentTool === 'tree' && inventory.tree > 0) {
-        e.target.classList.add('tree')
-        e.target.classList.remove('sky')
+    } else if (currentTool === 'tree' && inventory.tree > 0) {
+        classList.add('tree')
+        classList.remove('sky')
         inventory.tree--
 
-    } else if (inventory.currentTool === 'stone' && inventory.stone > 0) {
-        e.target.classList.add('stone')
-        e.target.classList.remove('sky')
+    } else if (currentTool === 'stone' && inventory.stone > 0) {
+        classList.add('stone')
+        classList.remove('sky')
         inventory.stone--
 
     }
