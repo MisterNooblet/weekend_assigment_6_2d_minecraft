@@ -20,7 +20,6 @@ export function buildPlayerBoard() {
     grid.style.gridTemplateColumns = `repeat(${matrixBoard[0].length},1fr)`
     matrixBoard.forEach(rows => {
         rows.forEach(col => {
-            console.log(col == 'leaves');
             let tile = document.createElement('div')
             tile.classList.add('tile')
             switch (col) {
