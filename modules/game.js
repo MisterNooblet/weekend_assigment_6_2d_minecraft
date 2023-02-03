@@ -15,69 +15,79 @@ const pickaxe = document.querySelector('#pickaxe');
 const hatchet = document.querySelector('#hatchet');
 const shovel = document.querySelector('#shovel');
 const invblocks = document.querySelectorAll('.control-shadow')
+const body = document.querySelector('body')
 //Inventory listeners
 leavesAmt.addEventListener('click', (e) => {
-    resetTools()
     if (inventory.leaves > 0) {
         e.target.classList.add('control-active')
+        body.style.cursor = `url('/assets/images/blocks/Cursors/leaves.cur') , auto`
+        resetTools()
+        setTool('leaves')
     }
-    setTool('leaves')
 })
 grassAmt.addEventListener('click', (e) => {
-    resetTools()
     if (inventory.grass > 0) {
+        body.style.cursor = `url('/assets/images/blocks/Cursors/grass.cur') , auto`
         e.target.classList.add('control-active')
+        resetTools()
+        setTool('grass')
     }
-    setTool('grass')
 })
 treeAmt.addEventListener('click', (e) => {
-    resetTools()
     if (inventory.tree > 0) {
+        body.style.cursor = `url('/assets/images/blocks/Cursors/tree.cur') , auto`
         e.target.classList.add('control-active')
+        resetTools()
+        setTool('tree')
     }
-    setTool('tree')
 })
 stoneAmt.addEventListener('click', (e) => {
-    resetTools()
     if (inventory.stone > 0) {
+        body.style.cursor = `url('/assets/images/blocks/Cursors/stone.cur') , auto`
         e.target.classList.add('control-active')
+        resetTools()
+        setTool('stone')
     }
-    setTool('stone')
 })
 coalAmt.addEventListener('click', (e) => {
-    resetTools()
     if (inventory.coal > 0) {
+        body.style.cursor = `url('/assets/images/blocks/Cursors/coal.cur') , auto`
         e.target.classList.add('control-active')
+        resetTools()
+        setTool('coal')
     }
-    setTool('coal')
 })
 rubyAmt.addEventListener('click', (e) => {
-    resetTools()
     if (inventory.ruby > 0) {
+        body.style.cursor = `url('/assets/images/blocks/Cursors/ruby.cur') , auto`
         e.target.classList.add('control-active')
+        resetTools()
+        setTool('ruby')
     }
-    setTool('ruby')
 })
 diamondAmt.addEventListener('click', (e) => {
-    resetTools()
     if (inventory.diamond > 0) {
+        body.style.cursor = `url('/assets/images/blocks/Cursors/diamond.cur') , auto`
         e.target.classList.add('control-active')
+        resetTools()
+        setTool('diamond')
     }
-    setTool('diamond')
 })
 pickaxe.addEventListener('click', (e) => {
     resetTools()
+    body.style.cursor = `url('/assets/images/blocks/Cursors/pickaxe.cur') , auto`
     e.target.classList.add('control-active')
-
     setTool('pickaxe')
 })
 hatchet.addEventListener('click', (e) => {
     resetTools()
+    body.style.cursor = `url('/assets/images/blocks/Cursors/hatchet.cur') , auto`
     e.target.classList.add('control-active')
     setTool('hatchet')
 })
 shovel.addEventListener('click', (e) => {
     resetTools()
+    body.style.cursor = `url('/assets/images/blocks/Cursors/shovel.cur') , auto`
     e.target.classList.add('control-active')
     setTool('shovel')
 })
@@ -93,30 +103,37 @@ export function clickTile(e) {
     if (classList.contains('leaves') && tool === 'hatchet') {
         classList.remove('leaves')
         classList.add('sky')
+        leavesAmt.classList.add('pulse')
         inventory.leaves += 1
     } else if (classList.contains('ruby') && tool === 'pickaxe') {
         classList.remove('ruby')
         classList.add('sky')
+        rubyAmt.classList.add('pulse')
         inventory.ruby += 1
     } else if (classList.contains('diamond') && tool === 'pickaxe') {
         classList.remove('diamond')
         classList.add('sky')
+        diamondAmt.classList.add('pulse')
         inventory.diamond += 1
     } else if (classList.contains('coal') && tool === 'pickaxe') {
         classList.remove('coal')
         classList.add('sky')
+        coalAmt.classList.add('pulse')
         inventory.coal += 1
     } else if (classList.contains('tree') && tool === 'hatchet') {
         classList.remove('tree')
         classList.add('sky')
+        treeAmt.classList.add('pulse')
         inventory.tree += 1
     } else if (classList.contains('grass') && tool === 'shovel') {
         classList.remove('grass')
         classList.add('sky')
+        grassAmt.classList.add('pulse')
         inventory.grass += 1
     } else if (classList.contains('stone') && tool === 'pickaxe') {
         classList.remove('stone')
         classList.add('sky')
+        stoneAmt.classList.add('pulse')
         inventory.stone += 1
     } else if (classList.contains('sky')) {
         layTile(e)
@@ -172,6 +189,9 @@ function resetTools() {
 }
 
 function updateUI() {
+    invblocks.forEach(element => {
+        setTimeout(() => { element.classList.remove('pulse') }, 500)
+    })
     leavesAmt.innerHTML = inventory.leaves
     grassAmt.innerHTML = inventory.grass
     treeAmt.innerHTML = inventory.tree

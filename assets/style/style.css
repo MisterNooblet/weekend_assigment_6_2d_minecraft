@@ -144,3 +144,10 @@ body {
 .gameintro {
   flex-direction: column;
 }
+.toolname {
+  color: yellow !important;
+  font-weight: bold;
+}
+.skybluetxt {
+  color: skyblue;
+}
