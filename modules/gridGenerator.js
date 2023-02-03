@@ -13,6 +13,7 @@ export let inventory = {
 }
 const grid = document.querySelector('#gamegrid')
 export function buildPlayerBoard() {
+    let tileDelay = 0
     grid.style.gridTemplateRows = `repeat(${matrixBoard.length},1fr)`
     grid.style.gridTemplateColumns = `repeat(${matrixBoard[0].length},1fr)`
     matrixBoard.forEach(rows => {
@@ -48,10 +49,15 @@ export function buildPlayerBoard() {
                 default:
                     break;
             }
-            grid.appendChild(tile)
-            tile.addEventListener('click', (e) => {
-                clickTile(e)
-            })
+            tileDelay += 10
+            setTimeout(() => {
+                grid.appendChild(tile)
+                tile.classList.add('bounce')
+                tile.addEventListener('click', (e) => {
+                    clickTile(e)
+                })
+
+            }, tileDelay)
         })
     })
 }
