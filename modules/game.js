@@ -100,37 +100,43 @@ function setTool(tool) {
 export function clickTile(e) {
     let tool = inventory.currentTool;
     let classList = e.target.classList
-    if (classList.contains('leaves') && tool === 'hatchet') {
+    let tileId = e.target.id.split('x')
+    tileId[1]--
+    let nextTileAbove = document.querySelector(`#${tileId.join('x')}`)
+    console.log(nextTileAbove);
+    console.log(tileId);
+    console.log(e.target.get);
+    if (classList.contains('leaves') && tool === 'hatchet' && nextTileAbove.classList.contains('sky')) {
         classList.remove('leaves')
         classList.add('sky')
         leavesAmt.classList.add('pulse')
         inventory.leaves += 1
-    } else if (classList.contains('ruby') && tool === 'pickaxe') {
+    } else if (classList.contains('ruby') && tool === 'pickaxe' && nextTileAbove.classList.contains('sky')) {
         classList.remove('ruby')
         classList.add('sky')
         rubyAmt.classList.add('pulse')
         inventory.ruby += 1
-    } else if (classList.contains('diamond') && tool === 'pickaxe') {
+    } else if (classList.contains('diamond') && tool === 'pickaxe' && nextTileAbove.classList.contains('sky')) {
         classList.remove('diamond')
         classList.add('sky')
         diamondAmt.classList.add('pulse')
         inventory.diamond += 1
-    } else if (classList.contains('coal') && tool === 'pickaxe') {
+    } else if (classList.contains('coal') && tool === 'pickaxe' && nextTileAbove.classList.contains('sky')) {
         classList.remove('coal')
         classList.add('sky')
         coalAmt.classList.add('pulse')
         inventory.coal += 1
-    } else if (classList.contains('tree') && tool === 'hatchet') {
+    } else if (classList.contains('tree') && tool === 'hatchet' && nextTileAbove.classList.contains('sky')) {
         classList.remove('tree')
         classList.add('sky')
         treeAmt.classList.add('pulse')
         inventory.tree += 1
-    } else if (classList.contains('grass') && tool === 'shovel') {
+    } else if (classList.contains('grass') && tool === 'shovel' && nextTileAbove.classList.contains('sky')) {
         classList.remove('grass')
         classList.add('sky')
         grassAmt.classList.add('pulse')
         inventory.grass += 1
-    } else if (classList.contains('stone') && tool === 'pickaxe') {
+    } else if (classList.contains('stone') && tool === 'pickaxe' && nextTileAbove.classList.contains('sky')) {
         classList.remove('stone')
         classList.add('sky')
         stoneAmt.classList.add('pulse')

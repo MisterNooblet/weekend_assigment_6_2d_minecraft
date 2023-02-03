@@ -18,8 +18,8 @@ export function buildPlayerBoard() {
     let tileDelay = 0
     grid.style.gridTemplateRows = `repeat(${matrixBoard.length},1fr)`
     grid.style.gridTemplateColumns = `repeat(${matrixBoard[0].length},1fr)`
-    matrixBoard.forEach(rows => {
-        rows.forEach(col => {
+    matrixBoard.forEach((rows, ridx) => {
+        rows.forEach((col, cidx) => {
             let tile = document.createElement('div')
             tile.classList.add('tile')
             switch (col) {
@@ -54,6 +54,7 @@ export function buildPlayerBoard() {
             setTimeout(() => {
                 grid.appendChild(tile)
                 tile.classList.add('bounce')
+                tile.id = `x${ridx}x${cidx}`
                 tile.addEventListener('click', (e) => {
                     clickTile(e)
                 })
