@@ -73,17 +73,21 @@ body {
 }
 .playercontrols {
   display: flex;
+  align-items: center;
   height: 10vmin;
   width: 100vw;
 }
 .tools {
   display: flex;
-  width: 100vmin;
   justify-self: end;
   justify-content: end;
-  flex-grow: 1;
+  flex-grow: 0;
 }
-
+.buttons {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
 .inventory {
   display: flex;
   justify-self: start;
@@ -174,4 +178,31 @@ body {
   text-align: center;
   font-size: 1rem;
   font-weight: bold;
+}
+.btn {
+  display: flex;
+  color: black;
+  align-items: center;
+  cursor: pointer;
+  height: fit-content;
+  font-size: 2.5vmin;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.btn:hover {
+  box-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
+  text-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
+    2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
+    -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px 2px 0 rgba(233, 217, 0, 0.5), -2px 0px 0 rgba(233, 217, 0, 0.5),
+    0px -2px 0 rgba(233, 217, 0, 0.5);
+}
+.hidden {
+  display: none;
 }

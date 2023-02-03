@@ -16,7 +16,45 @@ const hatchet = document.querySelector('#hatchet');
 const shovel = document.querySelector('#shovel');
 const invblocks = document.querySelectorAll('.control-shadow')
 const body = document.querySelector('body')
+const gamegrid = document.querySelector('#gamegrid')
+//buttons
+const restartBtn = document.querySelector('#restartBtn')
+const menuBtn = document.querySelector('#menuBtn')
+const nvmBtn = document.querySelector('#nvmBtn')
+const resetBtn = document.querySelector('#resetBtn')
+
 //Inventory listeners
+restartBtn.addEventListener('click', (e) => {
+    e.target.classList.add('hidden')
+    resetBtn.classList.remove('hidden')
+    menuBtn.classList.remove('hidden')
+    nvmBtn.classList.remove('hidden')
+})
+nvmBtn.addEventListener('click', (e) => {
+    e.target.classList.add('hidden')
+    resetBtn.classList.add('hidden')
+    menuBtn.classList.add('hidden')
+    restartBtn.classList.remove('hidden')
+})
+menuBtn.addEventListener('click', () => {
+    location.href = './'
+})
+resetBtn.addEventListener('click', () => {
+    resetWorld()
+})
+
+function resetWorld() {
+    inventory.coal = 0
+    inventory.leaves = 0
+    inventory.tree = 0
+    inventory.grass = 0
+    inventory.stone = 0
+    inventory.ruby = 0
+    inventory.diamond = 0
+    updateUI()
+    gamegrid.innerHTML = ''
+    buildPlayerBoard()
+}
 leavesAmt.addEventListener('click', (e) => {
     if (inventory.leaves > 0) {
         resetTools()
