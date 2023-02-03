@@ -2,6 +2,7 @@ import { clickTile } from "./game.js";
 
 let matrixBoard = JSON.parse(localStorage.getItem('map'));
 export let inventory = {
+    currentTool: 0,
     leaves: 0,
     ruby: 0,
     diamond: 0,
