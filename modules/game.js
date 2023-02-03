@@ -19,57 +19,57 @@ const body = document.querySelector('body')
 //Inventory listeners
 leavesAmt.addEventListener('click', (e) => {
     if (inventory.leaves > 0) {
+        resetTools()
         e.target.classList.add('control-active')
         body.style.cursor = `url('/assets/images/blocks/Cursors/leaves.cur') , auto`
-        resetTools()
         setTool('leaves')
     }
 })
 grassAmt.addEventListener('click', (e) => {
     if (inventory.grass > 0) {
+        resetTools()
         body.style.cursor = `url('/assets/images/blocks/Cursors/grass.cur') , auto`
         e.target.classList.add('control-active')
-        resetTools()
         setTool('grass')
     }
 })
 treeAmt.addEventListener('click', (e) => {
     if (inventory.tree > 0) {
+        resetTools()
         body.style.cursor = `url('/assets/images/blocks/Cursors/tree.cur') , auto`
         e.target.classList.add('control-active')
-        resetTools()
         setTool('tree')
     }
 })
 stoneAmt.addEventListener('click', (e) => {
     if (inventory.stone > 0) {
+        resetTools()
         body.style.cursor = `url('/assets/images/blocks/Cursors/stone.cur') , auto`
         e.target.classList.add('control-active')
-        resetTools()
         setTool('stone')
     }
 })
 coalAmt.addEventListener('click', (e) => {
     if (inventory.coal > 0) {
+        resetTools()
         body.style.cursor = `url('/assets/images/blocks/Cursors/coal.cur') , auto`
         e.target.classList.add('control-active')
-        resetTools()
         setTool('coal')
     }
 })
 rubyAmt.addEventListener('click', (e) => {
     if (inventory.ruby > 0) {
+        resetTools()
         body.style.cursor = `url('/assets/images/blocks/Cursors/ruby.cur') , auto`
         e.target.classList.add('control-active')
-        resetTools()
         setTool('ruby')
     }
 })
 diamondAmt.addEventListener('click', (e) => {
     if (inventory.diamond > 0) {
+        resetTools()
         body.style.cursor = `url('/assets/images/blocks/Cursors/diamond.cur') , auto`
         e.target.classList.add('control-active')
-        resetTools()
         setTool('diamond')
     }
 })
