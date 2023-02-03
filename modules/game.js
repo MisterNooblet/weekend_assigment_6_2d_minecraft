@@ -124,7 +124,42 @@ export function clickTile(e) {
 }
 
 function layTile(e) {
-    console.log(e.target);
+    if (inventory.currentTool === 'leaves' && inventory.leaves > 0) {
+        e.target.classList.add('leaves')
+        e.target.classList.remove('sky')
+        inventory.leaves--
+
+    } else if (inventory.currentTool === 'ruby' && inventory.ruby > 0) {
+        e.target.classList.add('ruby')
+        e.target.classList.remove('sky')
+        inventory.ruby--
+
+    } else if (inventory.currentTool === 'diamond' && inventory.diamond > 0) {
+        e.target.classList.add('diamond')
+        e.target.classList.remove('sky')
+        inventory.diamond--
+
+    } else if (inventory.currentTool === 'coal' && inventory.coal > 0) {
+        e.target.classList.add('coal')
+        e.target.classList.remove('sky')
+        inventory.coal--
+
+    } else if (inventory.currentTool === 'grass' && inventory.grass > 0) {
+        e.target.classList.add('grass')
+        e.target.classList.remove('sky')
+        inventory.grass--
+
+    } else if (inventory.currentTool === 'tree' && inventory.tree > 0) {
+        e.target.classList.add('tree')
+        e.target.classList.remove('sky')
+        inventory.tree--
+
+    } else if (inventory.currentTool === 'stone' && inventory.stone > 0) {
+        e.target.classList.add('stone')
+        e.target.classList.remove('sky')
+        inventory.stone--
+
+    }
 }
 
 function resetTools() {
