@@ -61,3 +61,97 @@ body {
 .sky {
   background-color: skyblue;
 }
+.playercontrols {
+  display: flex;
+}
+.tools {
+  display: flex;
+  width: 100vw;
+  justify-self: end;
+  justify-content: end;
+}
+
+.inventory {
+  display: flex;
+  justify-self: start;
+  justify-content: start;
+}
+.inventory {
+}
+#shovel div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/shovel.webp') center center/contain;
+}
+#hatchet div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/hatchet.webp') center center/contain;
+}
+#pickaxe div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/pickaxe.webp') center center/contain;
+}
+
+#leaves-inv div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/leaves.webp');
+}
+#grass-inv div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/grass.webp');
+}
+#tree-inv div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/tree.webp');
+}
+#stone-inv div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/stone.webp');
+}
+#coal-inv div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/coal.webp');
+}
+#ruby-inv div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/ruby.webp');
+}
+#diamond-inv div {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+  background: url('/assets/images/blocks/diamond.webp');
+}
+.control-shadow {
+  -webkit-box-shadow: inset 0px 0px 0px 2px black;
+  -moz-box-shadow: inset 0px 0px 0px 2px black;
+  box-shadow: inset 0px 0px 0px 2px black;
+}
+.control-shadow:hover {
+  -webkit-box-shadow: inset 0px 0px 0px 2px yellow;
+  -moz-box-shadow: inset 0px 0px 0px 2px yellow;
+  box-shadow: inset 0px 0px 0px 2px yellow;
+}
+.inv-txt {
+  color: yellow;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
