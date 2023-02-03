@@ -1,4 +1,4 @@
-import { clickTile } from "./game.js";
+import { clickTile, resetBtn, restartBtn } from "./game.js";
 
 let matrixBoard = JSON.parse(localStorage.getItem('map'));
 export let inventory = {
@@ -62,5 +62,9 @@ export function buildPlayerBoard() {
             }, tileDelay)
         })
     })
-    setTimeout(() => { rocks.pause() }, tileDelay)
+    setTimeout(() => {
+        rocks.pause()
+        restartBtn.classList.remove('hidden')
+        resetBtn.disabled = false
+    }, tileDelay)
 }

@@ -18,10 +18,10 @@ const invblocks = document.querySelectorAll('.control-shadow')
 const body = document.querySelector('body')
 const gamegrid = document.querySelector('#gamegrid')
 //buttons
-const restartBtn = document.querySelector('#restartBtn')
+export const restartBtn = document.querySelector('#restartBtn')
 const menuBtn = document.querySelector('#menuBtn')
 const nvmBtn = document.querySelector('#nvmBtn')
-const resetBtn = document.querySelector('#resetBtn')
+export const resetBtn = document.querySelector('#resetBtn')
 
 //Inventory listeners
 restartBtn.addEventListener('click', (e) => {
@@ -39,7 +39,12 @@ nvmBtn.addEventListener('click', (e) => {
 menuBtn.addEventListener('click', () => {
     location.href = './'
 })
-resetBtn.addEventListener('click', () => {
+resetBtn.addEventListener('click', (e) => {
+    e.target.classList.add('hidden')
+    menuBtn.classList.add('hidden')
+    nvmBtn.classList.add('hidden')
+    restartBtn.classList.add('hidden')
+    resetBtn.disabled = true
     resetWorld()
 })
 
