@@ -1,4 +1,15 @@
+import { clickTile } from "./game.js";
+
 let matrixBoard = JSON.parse(localStorage.getItem('map'));
+export let inventory = {
+    leaves: 0,
+    ruby: 0,
+    diamond: 0,
+    coal: 0,
+    tree: 0,
+    grass: 0,
+    stone: 0
+}
 const grid = document.querySelector('#gamegrid')
 export function buildPlayerBoard() {
     grid.style.gridTemplateRows = `repeat(${matrixBoard.length},1fr)`
@@ -37,6 +48,9 @@ export function buildPlayerBoard() {
                     break;
             }
             grid.appendChild(tile)
+            tile.addEventListener('click', (e) => {
+                clickTile(e)
+            })
         })
     })
 }

@@ -150,6 +150,12 @@ body {
   -moz-box-shadow: inset 0px 0px 0px 2px yellow;
   box-shadow: inset 0px 0px 0px 2px yellow;
 }
+
+.control-active {
+  -webkit-box-shadow: inset 0px 0px 0px 2px yellow;
+  -moz-box-shadow: inset 0px 0px 0px 2px yellow;
+  box-shadow: inset 0px 0px 0px 2px yellow;
+}
 .inv-txt {
   color: yellow;
   text-align: center;
