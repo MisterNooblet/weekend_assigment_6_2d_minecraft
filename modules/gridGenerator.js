@@ -12,7 +12,9 @@ export let inventory = {
     stone: 0
 }
 const grid = document.querySelector('#gamegrid')
+const rocks = document.querySelector('#rocksSound')
 export function buildPlayerBoard() {
+    rocks.play()
     let tileDelay = 0
     grid.style.gridTemplateRows = `repeat(${matrixBoard.length},1fr)`
     grid.style.gridTemplateColumns = `repeat(${matrixBoard[0].length},1fr)`
@@ -60,4 +62,5 @@ export function buildPlayerBoard() {
             }, tileDelay)
         })
     })
+    setTimeout(() => { rocks.pause() }, tileDelay)
 }
