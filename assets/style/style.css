@@ -96,7 +96,8 @@ body {
 
   padding: 0 4vmin;
 }
-#startBtn {
+#startBtn,
+#sandboxBtn {
   display: flex;
   color: black;
   align-items: center;
@@ -139,4 +140,7 @@ body {
   text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
     -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
     0px -2px 0 black;
+}
+.gameintro {
+  flex-direction: column;
 }
