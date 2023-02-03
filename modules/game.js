@@ -3,6 +3,10 @@ import { buildPlayerBoard } from "./gridGenerator.js"
 import { inventory } from "./gridGenerator.js"
 //initialize board
 buildPlayerBoard()
+document.addEventListener('DOMContentLoaded', function () {
+    updateUI()
+
+}, false);
 //dom elements
 const leavesAmt = document.querySelector('#leaves-amt');
 const grassAmt = document.querySelector('#grass-amt');
@@ -49,13 +53,14 @@ resetBtn.addEventListener('click', (e) => {
 })
 
 function resetWorld() {
-    inventory.coal = 0
-    inventory.leaves = 0
-    inventory.tree = 0
-    inventory.grass = 0
-    inventory.stone = 0
-    inventory.ruby = 0
-    inventory.diamond = 0
+    let inv = JSON.parse(localStorage.getItem('inv'));
+    inventory.coal = inv.coal
+    inventory.ruby = inv.ruby
+    inventory.stone = inv.stone
+    inventory.tree = inv.tree
+    inventory.diamond = inv.diamond
+    inventory.grass = inv.grass
+    inventory.leaves = inv.leaves
     updateUI()
     gamegrid.innerHTML = ''
     buildPlayerBoard()

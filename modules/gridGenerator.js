@@ -1,16 +1,7 @@
 import { clickTile, resetBtn, restartBtn } from "./game.js";
 
 let matrixBoard = JSON.parse(localStorage.getItem('map'));
-export let inventory = {
-    currentTool: 0,
-    leaves: 0,
-    ruby: 0,
-    diamond: 0,
-    coal: 0,
-    tree: 0,
-    grass: 0,
-    stone: 0
-}
+export let inventory = JSON.parse(localStorage.getItem('inv'));
 const grid = document.querySelector('#gamegrid')
 const rocks = document.querySelector('#rocksSound')
 export function buildPlayerBoard() {

@@ -1,6 +1,5 @@
 //////////////Load manager
 import { generateArray } from "./tileGenerator.js";
-
 document.onreadystatechange = function () {
     if (document.readyState !== "complete") {
         document.querySelector("body").style.display = "none";
@@ -28,6 +27,7 @@ let incWidth = document.querySelector('#incWidth')
 let decHeight = document.querySelector('#decHeight')
 let incHeight = document.querySelector('#incHeight')
 const startBtn = document.querySelector('#startBtn');
+const sandboxBtn = document.querySelector('#sandboxBtn')
 //Event Listeners
 arrows.forEach(element => {
     element.addEventListener('click', function (e) {
@@ -49,9 +49,37 @@ incHeight.addEventListener('click', () => {
 })
 
 startBtn.addEventListener('click', () => {
-    generateArray(width, height)
+    generateArray(width, height, 'normal')
     location.href = '/game.html'
+    let inventory = {
+        currentTool: 0,
+        leaves: 0,
+        ruby: 0,
+        diamond: 0,
+        coal: 0,
+        tree: 0,
+        grass: 0,
+        stone: 0
+    }
+
+    localStorage.setItem('inv', JSON.stringify(inventory))
 })
+sandboxBtn.addEventListener('click', () => {
+    generateArray(width, height, 'sandbox')
+    location.href = '/game.html'
+    let inventory = {
+        currentTool: 999,
+        leaves: 999,
+        ruby: 999,
+        diamond: 999,
+        coal: 999,
+        tree: 999,
+        grass: 999,
+        stone: 999
+    }
+    localStorage.setItem('inv', JSON.stringify(inventory))
+})
+
 
 
 function modSize(params) {
