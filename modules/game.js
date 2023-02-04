@@ -52,7 +52,7 @@ resetBtn.addEventListener('click', (e) => {
     resetWorld()
 })
 
-function resetWorld() {
+function resetWorld() { //resets our world and inventory on the current configuration without going back to menu.
     let inv = JSON.parse(localStorage.getItem('inv'));
     inventory.coal = inv.coal
     inventory.ruby = inv.ruby
@@ -65,6 +65,8 @@ function resetWorld() {
     gamegrid.innerHTML = ''
     buildPlayerBoard()
 }
+
+//UI Listeners
 leavesAmt.addEventListener('click', (e) => {
     if (inventory.leaves > 0) {
         resetTools()
@@ -140,12 +142,12 @@ shovel.addEventListener('click', (e) => {
     setTool('shovel')
 })
 
-function setTool(tool) {
+function setTool(tool) {//sets our current tool variable's value so we can identify what were clicking with
     inventory.currentTool = tool;
 }
 
-//functions
-export function clickTile(e) {
+
+export function clickTile(e) {//holds our tile "harvesting" logic
     let tool = inventory.currentTool;
     let classList = e.target.classList
     let tileId = e.target.id.split('x')
@@ -192,7 +194,7 @@ export function clickTile(e) {
     updateUI()
 }
 
-function layTile(e) {
+function layTile(e) {//holds our tile "laying" logic
     let classList = e.target.classList
     let currentTool = inventory.currentTool
     if (currentTool === 'leaves' && inventory.leaves > 0) {
@@ -233,13 +235,13 @@ function layTile(e) {
     }
 }
 
-function resetTools() {
+function resetTools() {//sets all tools to "unactive" visually
     invblocks.forEach(element => {
         element.classList.remove('control-active')
     })
 }
 
-function updateUI() {
+function updateUI() { // updates our UI
     invblocks.forEach(element => {
         setTimeout(() => { element.classList.remove('pulse') }, 500)
     })

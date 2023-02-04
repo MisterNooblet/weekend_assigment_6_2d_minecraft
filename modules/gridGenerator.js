@@ -1,15 +1,17 @@
 import { clickTile, resetBtn, restartBtn } from "./game.js";
 
-let matrixBoard = JSON.parse(localStorage.getItem('map'));
+let matrixBoard = JSON.parse(localStorage.getItem('map')); // pulls out the map generated earlier by tileGenerator.js
+
 export let inventory = JSON.parse(localStorage.getItem('inv'));
 const grid = document.querySelector('#gamegrid')
 const rocks = document.querySelector('#rocksSound')
-export function buildPlayerBoard() {
+
+export function buildPlayerBoard() { // laying the "bricks"
     rocks.play()
-    let tileDelay = 0
-    grid.style.gridTemplateRows = `repeat(${matrixBoard.length},1fr)`
-    grid.style.gridTemplateColumns = `repeat(${matrixBoard[0].length},1fr)`
-    matrixBoard.forEach((rows, ridx) => {
+    let tileDelay = 0 // just a delay counter for our setTimeout "drop" animation.
+    grid.style.gridTemplateRows = `repeat(${matrixBoard.length},1fr)` //sets our grid rows
+    grid.style.gridTemplateColumns = `repeat(${matrixBoard[0].length},1fr)` //sets our grid columns
+    matrixBoard.forEach((rows, ridx) => { // starts laying the bricks by reading our matrixBoard and making descisions 
         rows.forEach((col, cidx) => {
             let tile = document.createElement('div')
             tile.classList.add('tile')
@@ -45,15 +47,15 @@ export function buildPlayerBoard() {
             setTimeout(() => {
                 grid.appendChild(tile)
                 tile.classList.add('bounce')
-                tile.id = `x${ridx}x${cidx}`
-                tile.addEventListener('click', (e) => {
+                tile.id = `x${ridx}x${cidx}` // sets an id , so we can later use it to identify if there is a block or sky tile above us
+                tile.addEventListener('click', (e) => { // adding an event listener to each individual tile.
                     clickTile(e)
                 })
 
             }, tileDelay)
         })
     })
-    setTimeout(() => {
+    setTimeout(() => { //stops our falling rocks sfx , and brings out our game menu buttons
         rocks.pause()
         restartBtn.classList.remove('hidden')
         resetBtn.disabled = false

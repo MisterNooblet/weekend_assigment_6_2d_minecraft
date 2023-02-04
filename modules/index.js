@@ -9,14 +9,10 @@ document.onreadystatechange = function () {
         document.querySelector("body").style.display = "";
     }
 };
-
-
-
-//Variables
+//Game Board size vars
 let height = 24;
 let width = 24;
-
-//sounds
+//Sounds
 const clickSound = document.querySelector('#clickSound');
 //html elements
 let arrows = document.querySelectorAll(".arrow");
@@ -29,7 +25,7 @@ let incHeight = document.querySelector('#incHeight')
 const startBtn = document.querySelector('#startBtn');
 const sandboxBtn = document.querySelector('#sandboxBtn')
 //Event Listeners
-arrows.forEach(element => {
+arrows.forEach(element => { // add a sound event listener on click for each Chevron
     element.addEventListener('click', function (e) {
         clickSound.play()
     })
@@ -38,17 +34,20 @@ arrows.forEach(element => {
 decWidth.addEventListener('click', () => {
     modSize('decWidth')
 })
+
 incWidth.addEventListener('click', () => {
     modSize('incWidth')
 })
+
 decHeight.addEventListener('click', () => {
     modSize('decHeight')
 })
+
 incHeight.addEventListener('click', () => {
     modSize('incHeight')
 })
 
-startBtn.addEventListener('click', () => {
+startBtn.addEventListener('click', () => {//our start button which initiates an empty inventory and stores it in localStorage
     generateArray(width, height, 'normal')
     location.href = '/game.html'
     let inventory = {
@@ -64,7 +63,7 @@ startBtn.addEventListener('click', () => {
 
     localStorage.setItem('inv', JSON.stringify(inventory))
 })
-sandboxBtn.addEventListener('click', () => {
+sandboxBtn.addEventListener('click', () => {//our sandbox button which initiates a full inventory and stores it in localStorage
     generateArray(width, height, 'sandbox')
     location.href = '/game.html'
     let inventory = {
@@ -82,7 +81,7 @@ sandboxBtn.addEventListener('click', () => {
 
 
 
-function modSize(params) {
+function modSize(params) { //Updates the board size values to be used later as arguments in our gridGenerator function.
     switch (params) {
         case 'decWidth':
             if (width > 10) {
@@ -113,7 +112,7 @@ function modSize(params) {
     }
 
 }
-function updateNums(side) {
+function updateNums(side) { //Updates the Numbers on board size selection box
     switch (side) {
         case 'left':
             widthEl.innerHTML = width
