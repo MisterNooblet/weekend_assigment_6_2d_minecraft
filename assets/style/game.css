@@ -36,6 +36,10 @@ body {
   width: 100%;
   height: 90vmin;
 }
+.tile {
+  opacity: 1;
+  transition: 0.5s;
+}
 .tile:hover {
   border: 1px solid white;
 }
