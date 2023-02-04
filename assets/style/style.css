@@ -73,6 +73,7 @@ body {
   text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
     -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black,
     0px -2px 0 black;
+  transition: 1s;
 }
 .buttons i:hover {
   color: #ffffff;
@@ -98,6 +99,7 @@ body {
 }
 #startBtn,
 #sandboxBtn {
+  transition: 1s;
   display: flex;
   color: black;
   align-items: center;
@@ -114,7 +116,8 @@ body {
     0px 2px 0 rgba(255, 255, 255, 0.5), -2px 0px 0 rgba(255, 255, 255, 0.5),
     0px -2px 0 rgba(255, 255, 255, 0.5); */
 }
-#startBtn:hover {
+#startBtn:hover,
+#sandboxBtn:hover {
   box-shadow: 2px 2px 0 rgba(233, 217, 0, 0.5),
     2px -2px 0 rgba(233, 217, 0, 0.5), -2px 2px 0 rgba(233, 217, 0, 0.5),
     -2px -2px 0 rgba(233, 217, 0, 0.5), 2px 0px 0 rgba(233, 217, 0, 0.5),

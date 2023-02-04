@@ -155,6 +155,7 @@ body {
   background: url('/assets/images/blocks/diamond.png');
 }
 .control-shadow {
+  transition: 1s;
   -webkit-box-shadow: inset 0px 0px 0px 2px black;
   -moz-box-shadow: inset 0px 0px 0px 2px black;
   box-shadow: inset 0px 0px 0px 2px black;
@@ -180,6 +181,7 @@ body {
   font-weight: bold;
 }
 .btn {
+  transition: 1s;
   display: flex;
   color: black;
   align-items: center;
